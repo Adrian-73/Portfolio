@@ -1,0 +1,40 @@
+{"social":[
+    {
+        "name": "facebook",
+        "url": "https://www.facebook.com/roberto.romero.399826",
+        "icon": "/facebook.svg"
+    },
+    {
+        "name": "twitter",
+        "url": "https://twitter.com/roberto_romero_",
+        "icon": "/Twitter.svg"
+    },
+    {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/roberto-romero-0b1b0b1a/",
+        "icon": "/LinkedIn.svg"
+    },
+    {
+        "name": "github",
+        "url": "https://www.github.com/robertoromero",
+        "icon": "/Github.svg"
+    }
+],
+"uri":[
+    {
+        "name":"Home",
+        "uri":"/"
+    },
+    {
+        "name":"Blog",
+        "uri":"/blog"
+    },
+    {
+        "name":"Skills",
+        "uri":"/skills"
+    },
+    {
+        "name":"Contacts",
+        "uri":"/contacts"
+    }
+]}
