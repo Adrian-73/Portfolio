@@ -1,24 +1,55 @@
 <!-- import components -->
-<script>
+<script >
     import "../app.css"
     // import jsonfile from lib
     import { base } from '$app/paths'
-    import { social,uri } from '$lib/link.json'
+    import { uri } from '$lib/link.json'
     
-
+    import { invalidate } from '$app/navigation'
+    import { onMount,onDestroy } from 'svelte'
+  
+    export let data
+  
+    let { supabase, session } = data
+    $: ({ supabase, session } = data)
+  
+    onMount(() => {
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((event, _session) => {
+        if (_session?.expires_at !== session?.expires_at) {
+          invalidate('supabase:auth')
+        }
+      })
+  
+      return () => subscription.unsubscribe()
+    });
+    // onDestroy(() => {
+    //     window.addEventListener('beforeunload', supabase.auth.signOut);
+    //     return () => {
+    //   window.removeEventListener('beforeunload', supabase.auth.signOut);
+    // };
+    // })
 </script>
-<header class=" h-[76.25px] pl-5 pt-5 justify-between items-start inline-flex w-full">
-    <div class="lg:w-max h-[56.25px] relative">
-        <div class=" h-max left-[1.16px] lg:w-max w-min lg:text-2xl font-bold font-['Ubuntu']">Mandar Majumder</div>
+  
+<header class=" h-[76.25px] px-5 pt-5 justify-between items-start inline-flex w-full bg-cyan-600">
+    <div class="lg:w-max h-[56.25px] ">
+        <div class=" h-min left-[1.16px] lg:w-max w-min lg:text-2xl font-bold">Mandar Majumder</div>
     </div>
-        <nav class="w-full h-[27.64px] flex justify-end">
+        <nav class="w-full h-[27.64px] flex justify-end px-2">
             {#each uri as uri}
                 
-            <a class="w-max h-[27.64px] px-1 lg:text-2xl font-bold font-['Ubuntu']" href={uri.uri } >{uri.name}</a>
+            <a class="w-max h-[27.64px] px-1 lg:text-2xl font-bold " href={uri.uri } >{uri.name}</a>
             {/each}
             
         </nav>
 </header>
+<!-- session data -->
+<div>
+    {#if session}{
+    session.user.email
+    }{/if}
+</div>
 <slot/>
 <footer class="w-full h-[356.50px] px-[35px] py-[37px] bg-cyan-950 flex-col justify-start items-start gap-2.5 inline-flex">
     <div class="w-full h-[282.50px] relative">

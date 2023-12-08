@@ -7,9 +7,12 @@
                 <div class="max-w-[101.48px] w-full h-[31.31px] bg-slate-600 rounded-[7px] flex justify-center items-center center">Read more</div>
                 
               </div>
-              <div class="max-w-[101.48px] w-full flex  h-[32.73px] ">
+              <div class="min-w-[101.48px] w-full flex  h-[32.73px] ">
                 
-              <div class="w-[35.50px] h-[24.24px] flex items-center justify-center text-white text-[10px] font-normal font-['Inter'] leading-none tracking-wider">Tags:</div>
+              <div class="w-full h-[23.66px] flex flex-wrap">
+                <span class="p-1 w-max text-sm flex-center">Tags:</span>
+                <span class="px-1 w-max text-sm flex-center bg-violet-950 rounded-[15px]">virtualization</span>
+                </div> 
               </div>
           </div>
         </div>

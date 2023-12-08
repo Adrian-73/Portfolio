@@ -9,20 +9,19 @@
 
 </script>
 
-<main class="grid-cols-1 grid place-items-center my-9 justify-items-center item">
+<main class="grid-cols-1 grid place-items-center pb-9 justify-items-center item">
 <Lander></Lander>
 
-    <div class="w-[544px] h-[108px] relative ">
-        <div class="w-[544px] h-[45.20px] left-0 top-0 absolute">
-            <div class="w-[109px] h-[0px] left-0 top-[23px] absolute border border-black"></div>
-            <div class="w-[127px] h-[0px] left-[417px] top-[23px] absolute border border-black"></div>
-            <div class="w-[264px] h-[45.20px] left-[132.50px] top-0 absolute">
-                <div class="w-[264px] h-[31.85px] left-0 top-0 absolute text-center  text-2xl font-normal font-['Ubuntu']">Find me on socials</div>
-            </div>
+    <div class="max-w-[544px] h-[108px ] my-8">
+        <div class="max-w-[544px] h-[45.20px] flex-center">
+            <div class="w-full p-2 text-center text-white text-3xl font-normal">Find me on socials </div>
+
         </div>
-        <div class="w-[365px] h-[51px] left-[90px] top-[57px] absolute justify-center items-start gap-[42.49px] inline-flex">
+        <!-- divider -->
+        <div class="max-w-[544px] h-[0px] m-2 border border-white"></div>
+        <div class="w-[365px] h-[51px] justify-center items-start gap-[42.49px] inline-flex">
             {#each social as s}
-            <div class="w-[58.76px] h-[51px] relative ">
+            <div class="w-[58.76px] h-[51px]  ">
                 <img src={s.icon} alt={s.name} class="h-full">
             </div>
             {/each}
