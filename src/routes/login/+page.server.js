@@ -21,6 +21,7 @@ export const actions = {
       }
       return fail(error.message)
     }
+    
     throw redirect(303,'/blog/write')
   }
 }

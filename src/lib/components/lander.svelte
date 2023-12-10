@@ -1,8 +1,8 @@
     
-    <div class="py-4 items-center flex flex-col lg:flex-row justify-around w-full  pt-10 bg-gradient-to-b from-cyan-600 to-[#010F27]">
+    <div class="py-4 items-center flex flex-col lg:flex-row justify-around w-full  pt-[80px] bg-gradient-to-b from-cyan-600 to-[#010F27]">
         <div class="max-w-[409px] h-full flex-col justify-start items-center gap-[27px] inline-flex place-self-center my-4">
             <!-- svelte-ignore a11y-img-redundant-alt -->
-            <img class=" w-[300px]  rounded-full shadow border border-neutral-400" src="https://via.placeholder.com/216x209" alt="Profile picture" />
+            <img class=" w-[300px]  rounded-full shadow border border-neutral-400 hover:rounded-none hover:scale-110 ease-in-out transition-all duration-1000" src="/favicon.svg" alt="Profile picture" />
             <div class="w-full ">
                 <div class="w-full h-full ">
                     <div class="grow shrink basis-0 self-stretch flex">

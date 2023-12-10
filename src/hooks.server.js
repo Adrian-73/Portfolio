@@ -18,8 +18,10 @@ export const handle = async ({ event, resolve }) => {
 
   if( event.url.pathname.startsWith('/blog/write') ) {
 
-    if (!event.locals.session) {
-      throw redirect(303,'/login')
+    const session = await event.locals.getSession()
+    const access = (session == null);
+    if (access) {
+      throw redirect(303,'/blog')
     }
   
   }

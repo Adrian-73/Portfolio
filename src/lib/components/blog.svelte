@@ -8,7 +8,7 @@
             <div class="max-w-[200.15px] w-full h-[26.01px] lg:text-2xl font-medium font-['Ubuntu']">Latest blog posts</div>
             <div class="max-w-[490.01px] w-full h-[0px] border border-black"></div>
         </div>
-        <Card></Card>
+        <!-- <Card></Card> -->
         <div class="w-[130.24px] h-[52.07px] ">
             <div class="w-[56.24px] h-[52.07px] ">
                 <div class="w-[56.24px] h-[52.07px]  bg-sky-600 rounded-full"></div>
