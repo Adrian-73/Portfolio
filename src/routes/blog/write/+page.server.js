@@ -14,7 +14,6 @@ export const actions = {
         .insert({
             'created_at': date,
             'title': title,
-            // prepairing tags for supabase database
             'Tags': tags.split(',').map((tag) => tag.trim()),
             'content': content,
             'Description': Description
