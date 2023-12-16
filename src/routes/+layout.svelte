@@ -8,7 +8,8 @@
   import { onMount } from "svelte";
 
   export let data;
-
+  let scroll;
+  
   let { supabase, session } = data;
   $: ({ supabase, session } = data);
 
@@ -23,137 +24,95 @@
 
     return () => subscription.unsubscribe();
   });
-
-  let menu = false;
-  function toggleNavbar() {
-    menu = !menu;
-  }
+  
+  // home = url.psthname.aplit("/")[2] === "" 
+  $: shownav = ((scroll < 100) ) ? true : false;
   $: logedin = session ? true : false;
 </script>
-<header
-  class=" h-[76.25px] pl-5 pt-5 justify-between items-start inline-flex w-full
-  top-0 fixed bg-cyan-500 bg-opacity-25"
->
-  <div class="lg:w-max h-[56.25px]">
-    <div class=" h-min left-[1.16px] lg:w-max text-2xl font-bold" class:logedin>
-      Mandar Majumder
+<svelte:window bind:scrollY={scroll}></svelte:window>
+<div class="drawer ">
+  <input id="my-drawer-3"  type="checkbox" class="drawer-toggle"  /> 
+  <div class="drawer-content flex flex-col" >
+    <!-- Navbar -->
+    <div class="w-full navbar z-10  bg-black top-0 transition-all duration-500 fixed" class:shownav>
+      <div class="flex-none lg:hidden">
+        <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </label>
+      </div> 
+      <div class="flex-1 px-2 mx-2 text-2xl">Mandar Majumder</div>
+      <nav class="flex-none hidden lg:block">
+        <ul class="menu menu-horizontal text-xl">
+          <!-- Navbar menu content here -->
+          {#each uri as i}
+            <li><a href={i.uri} >{i.name}</a></li> 
+          {/each}
+        </ul>
+      </nav>
     </div>
-  </div>
-  <div class="w-1/3 h-full">
-    <div class="flex md:hidden justify-end pr-5">
-      <button
-        on:click={toggleNavbar}
-        type="button"
-        class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="white"
-          class="w-6 h-6 fill-white"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-      </button>
-    </div>
-    <nav >
-      <ul class="flex-col mt-8 space-y-4 bg-cyan-500 md:bg-opacity-0 bg-opacity-25 w-full 
-      md:justify-end md:p-2 p-4  
-      md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 {menu
-         ? 'flex'
-         : 'hidden'}">
-        {#each uri as uri}
-          <li class="w-max h-[27.64px] px-3 lg:text-2xl font-bold">
-            <a href={uri.uri}>{uri.name}</a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-  </div>
-</header>
-<!-- session data -->
+    <!-- Page content here -->
+<main class ="pt-14"><slot/></main>
+<a class="fixed bottom-16 right-16 transition-all duration-300" href="#top" class:shownav>
+  <div class="btn-accent btn btn-circle "><svg fill="#ffffff" height="1.5rem" width="1.5rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 330 330" xml:space="preserve">
+ <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+   l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+   C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+ </svg></div>
+</a>
+  </div> 
+  <nav class="z-20 drawer-side">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
+    <ul class="menu  w-80 min-h-full bg-base-200 text-lg">
+      <!-- Sidebar content here -->
+      <span class="text-2xl px-4 pt-4 text-bold">Menu</span>
+      <div class="divider"></div>
+      {#each uri as i}
+      <li><a class="px-4" href={i.uri} >{i.name}</a>
+      
+      </li> 
+      
+      {/each}
+      
+    </ul>
+  </nav>
+</div>
 
-<slot />
-<footer
-  class="w-full h-[356.50px] px-[35px] py-[37px] bg-cyan-950 flex-col justify-start items-start gap-2.5 inline-flex"
->
-  <div class="w-full h-[282.50px] relative">
-    <div></div>
-    <div
-      class="w-full h-[31.35px] left-[17.50px] top-[251.15px] absolute justify-start items-start gap-[142px] inline-flex"
-    >
-      <div class="w-full h-7">
-        <span style="text-white text-2xl font-normal font-['Ubuntu']"
-          >COPYRIGHT @ 2023
-        </span><span style="text-white text-2xl font-bold font-['Ubuntu']"
-          >mfaouzi.com</span
-        >
-      </div>
-      <div class="w-full h-[22px] text-right">
-        <span style="text-white text-2xl font-normal font-['Ubuntu']"
-          >Developed by
-        </span><span style="text-white text-2xl font-bold font-['Ubuntu']"
-          >Faouzi Mohamed</span
-        >
-      </div>
-    </div>
-    <div
-      class="w-full h-40 left-0 top-0 absolute justify-center items-start gap-[94px] inline-flex"
-    >
-      <div class="w-full h-40 relative">
-        <div class="w-full h-[62.82px]">
-          <div
-            class="w-full h-[34.01px] text-white text-[32px] font-bold font-['Ubuntu']"
-          >
-            Mandar Majiumder
-          </div>
-        </div>
-        <div
-          class="w-full h-[100.43px] text-white text-2xl font-normal font-['Ubuntu']"
-        >
-          Software Engineer | Full-stack Web Developer (ReactJs/ Angular /
-          Asp.Net)
-        </div>
-      </div>
-      <div class="w-full h-[136px] relative">
-        <div
-          class="w-full h-11 text-white text-[32px] font-normal font-['Ubuntu']"
-        >
-          Home
-        </div>
-        <div
-          class="w-full h-11 text-white text-[32px] font-normal font-['Ubuntu']"
-        >
-          Contact
-        </div>
-        <div
-          class="w-full h-[45px] text-white text-[32px] font-normal font-['Ubuntu']"
-        >
-          Blog
-        </div>
-        <div
-          class="w-full h-[43px] text-white text-[32px] font-normal font-['Ubuntu']"
-        >
-          Guestbook
-        </div>
-      </div>
-    </div>
-  </div>
+
+<footer class="footer p-10 bg-base-200 w-full text-base-content">
+  <aside>
+    <img src="/favicon.svg" alt="">
+    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+  </aside> 
+  <nav>
+    <span class="footer-title">Pages</span> 
+    {#each uri as i}
+    <a class="link link-hover" href={i.uri} >{i.name}</a>  
+    {/each}
+  </nav> 
+  <nav>
+    <header class="footer-title">Company</header> 
+    <a class="link link-hover">About us</a>
+    <a class="link link-hover">Contact</a>
+    <a class="link link-hover">Jobs</a>
+    <a class="link link-hover">Press kit</a>
+  </nav> 
+  <nav>
+    <header class="footer-title">Legal</header> 
+    <a class="link link-hover">Terms of use</a>
+    <a class="link link-hover">Privacy policy</a>
+    <a class="link link-hover">Cookie policy</a>
+  </nav>
 </footer>
-
 <style lang="postcss">
   :global(html) {
-    /* bg shadow */
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    webkit-scrollbar-width: none
 
-    background-color: #010f27;
-    color: #ffffff;
-    @apply shadow-black shadow-inner;
+  }
+  .shownav {
+    opacity: 0;
   }
   .logedin {
     /* flicker effect */

@@ -1,34 +1,53 @@
 <!-- import components -->
 <script>
+  import Blog from "../lib/components/blog.svelte";
+  import Lander from "../lib/components/lander.svelte";
+  import Contact from "../lib/components/contact.svelte";
+  import Skills from "../lib/components/skills.svelte";
+  
 
-    import { social } from '$lib/link.json'
-  import Blog from '../lib/components/blog.svelte';
-  import Lander from '../lib/components/lander.svelte';
-  import Skills from '../lib/components/skills.svelte';
+</script> 
+
+<main
+  class="grid-cols-1 grid place-items-center justify-items-center item"
+>
+  <section class="relative" id="top"
+   ><Lander/>
+   <div
+        class="absolute top-0 -right-16 w-[30rem] h-[30rem] bg-fuchsia-500 rounded-full blob animate-blob"
+        ></div>
+        <div
+        class="absolute -bottom-[64px] -left-16 w-[30rem] h-[30rem] bg-fuchsia-300 rounded-full blob animate-blob animation-delay-2000"
+        ></div>
+        <div
+        class="absolute -bottom-8 left-1/2 w-[30rem] h-[30rem] bg-blue-300 rounded-full blob animate-blob animation-delay-2000"
+        ></div>
     
-
-</script>
-
-<main class="grid-cols-1 grid place-items-center pb-9 justify-items-center item">
-<Lander></Lander>
-
-    <div class="max-w-[544px] h-[108px ] my-8">
-        <div class="max-w-[544px] h-[45.20px] flex-center">
-            <div class="w-full p-2 text-center text-white text-3xl font-normal">Find me on socials </div>
-
-        </div>
-        <!-- divider -->
-        <div class="max-w-[544px] h-[0px] m-2 border border-white"></div>
-        <div class="w-[365px] h-[51px] justify-center items-start gap-[42.49px] inline-flex">
-            {#each social as s}
-            <div class="w-[58.76px] h-[51px]  ">
-                <img src={s.icon} alt={s.name} class="h-full">
-            </div>
-            {/each}
-            
-            
-        </div>
+</section >
+  <Blog/>
+  <section class="flex-center">
+    <Skills></Skills>
+  </section>
+<section>
+    <Contact></Contact>
+</section>
+    
+        
+    <div class="fixed top-0 -z-[5]">
+    <div class="relative  h-screen" >
+        
     </div>
-<Blog></Blog>
-<Skills></Skills>
+</div>
+    
 </main>
+<style>
+  section {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    /* clip x axis overflow */
+    overflow-x: clip;
+
+  }
+
+</style>

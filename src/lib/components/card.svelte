@@ -19,7 +19,7 @@
       {post.title}
     </div>
     <div
-      class="max-w-[290px] w-full h-[58px] text-[11px] font-normal font-['Inter'] leading-none tracking-wider"
+      class="max-w-[290px] w-full h-[58px] text-[11px] flex overflow-clip font-normal font-['Inter'] leading-none tracking-wider"
     >
       {post.Description}
     </div>
@@ -38,7 +38,7 @@
           
         {#each post.Tags as tag}
         <span
-          class="px-1 w-max text-sm flex-center bg-violet-950 rounded-[15px]">{tag}</span>
+          class="px-2 w-max text-sm flex-center bg-violet-950 rounded-[15px]">{tag}</span>
         {/each}
         {/if}
         </div>

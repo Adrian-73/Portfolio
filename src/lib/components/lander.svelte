@@ -1,42 +1,90 @@
-    
-    <div class="py-4 items-center flex flex-col lg:flex-row justify-around w-full  pt-[80px] bg-gradient-to-b from-cyan-600 to-[#010F27]">
-        <div class="max-w-[409px] h-full flex-col justify-start items-center gap-[27px] inline-flex place-self-center my-4">
-            <!-- svelte-ignore a11y-img-redundant-alt -->
-            <img class=" w-[300px]  rounded-full shadow border border-neutral-400 hover:rounded-none hover:scale-110 ease-in-out transition-all duration-1000" src="/favicon.svg" alt="Profile picture" />
-            <div class="w-full ">
-                <div class="w-full h-full ">
-                    <div class="grow shrink basis-0 self-stretch flex">
-                        
-                        <div class="w-full h-[0px] border border-white mt-4"></div>
-                        <div class="w-full h-[34px]  text-center  text-2xl font-normal">Hi, There!</div>
-                        <div class="w-full h-[0px] border border-white mt-4"></div>
-                      
-                    </div>
-                    <div class="w-full   text-center text-2xl p-2 font-bold ">I’m Mandar Majumder</div>
-                    
-                    <div class="w-full text-center text-base font-light ">Software Engineer | Full-stack Web Developer (ReactJs/ Angular / Asp.Net)</div>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="lg:w-[520px] w-full min-h-[284px] lg:px-2.5 py-[10px] bg-cyan-100 bg-opacity-50 rounded-[5px] border border-sky-300 flex-col justify-center items-center gap-[5px] inline-flex my-4" >
-            <div class="w-[171px] h-[35px] relative">
-                <div class="w-[171px] h-[0px] left-0 top-[22.05px] absolute border border-black"></div>
-                <div class="left-[41px] top-0 absolute text-black text-lg font-bold font-['Ubuntu']">About Me</div>
-            </div>
+<div
+  class="py-4 items-center flex flex-col lg:flex-row justify-around w-full  lg:pt-[80px]"
+>
 
-            iposm
-            <div class="w-[258px] h-10 justify-between items-center inline-flex">
-                <div class="w-[110.19px] h-[35px] flex-col justify-center items-center gap-[9.60px] inline-flex">
-                    <div class="w-[110.19px] h-8 px-[14.50px] py-[11.60px] bg-sky-600 rounded-[5px] shadow justify-center items-center inline-flex">
-                        <div class="text-center text-white text-xs font-extrabold font-['Roboto'] capitalize">view resume</div>
-                    </div>
-                </div>
-                <div class="w-[147.86px] h-[38.41px] flex-col justify-center items-center gap-[9.60px] inline-flex">
-                    <div class="w-[147.86px] h-[35px] px-[14.53px] py-[11.62px] bg-white bg-opacity-0 rounded-[5px] justify-center items-center inline-flex">
-                        <div class="text-center text-sky-500 text-xs font-extrabold font-['Roboto'] capitalize">Download resume</div>
-                    </div>
-                </div>
-            </div>
+
+  <div
+    class="relative max-w-[409px] h-full flex-col justify-start items-center gap-[27px] inline-flex place-self-center my-4"
+  >
+    <!-- svelte-ignore a11y-img-redundant-alt -->
+    <div
+      class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full blob  animate-blob"
+    ></div>
+    <div
+      class="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full blob animate-blob animation-delay-2000"
+    ></div>
+    <div
+      class="absolute -bottom-8 left-20 w-[24rem] h-[24rem] bg-cyan-300 rounded-full blob animate-blob animation-delay-4000"
+    ></div>
+    <svg
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      id="blobSvg"
+      class="w-full h-full "
+    >
+      <defs>
+        <clipPath id="shape">
+          <path
+            id="blob"
+            fill="#000000"
+          ><animate
+          attributeName="d"
+          dur="8s"
+          repeatCount="indefinite"
+          values="M452,334Q418,418,334,444Q250,470,167,443Q84,416,76,333Q68,250,85.5,176.5Q103,103,176.5,105.5Q250,108,306,123Q362,138,424,194Q486,250,452,334Z; 
+          
+          M457,337.5Q425,425,337.5,448Q250,471,167.5,443Q85,415,45.5,332.5Q6,250,74.5,196.5Q143,143,196.5,99Q250,55,315.5,87Q381,119,435,184.5Q489,250,457,337.5Z; 
+
+          M447,328.5Q407,407,328.5,453Q250,499,178,446.5Q106,394,87,322Q68,250,87.5,178.5Q107,107,178.5,88.5Q250,70,333.5,76.5Q417,83,452,166.5Q487,250,447,328.5Z; 
+
+          M453.5,336.5Q423,423,336.5,431Q250,439,166.5,428Q83,417,55.5,333.5Q28,250,67.5,178.5Q107,107,178.5,74.5Q250,42,317,79Q384,116,434,183Q484,250,453.5,336.5Z;
+          
+          M452,334Q418,418,334,444Q250,470,167,443Q84,416,76,333Q68,250,85.5,176.5Q103,103,176.5,105.5Q250,108,306,123Q362,138,424,194Q486,250,452,334Z;
+          
+          
+          "
+        ></animate>
+        </path>
+        </clipPath>
+      </defs>
+      <image
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        clip-path="url(#shape)"
+        xlink:href="https://source.unsplash.com/5PVXkqt2s9k/500x500"
+        preserveAspectRatio="none"
+      ></image>
+    </svg>
+    <div class="w-full">
+      <div class="w-full h-full">
+        <div class="grow shrink basis-0 self-stretch flex">
+          <div class="divider text-2xl divider-base-100 w-full">Hi, There!</div>
         </div>
+        <div class="w-full text-center text-2xl p-2 font-bold">
+          I’m Mandar Majumder
+        </div>
+
+        <div class="w-full text-center text-base font-light">
+          Software Engineer | AI/ML Devoloper (TensorFplw/ PyTorch / Keras)
+        </div>
+      </div>
     </div>
+  </div>
+  <div
+    class="lg:w-[720px] w-full min-h-[284px] h-full lg:px-2.5 flex-col justify-center items-center  inline-flex "
+  >
+  <div class="hero bg-white backdrop-blur-sm bg-opacity-10 h-[500px] w-full">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Hello there</h1>
+        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

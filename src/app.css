@@ -2,7 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.flex-center {
-  @apply flex items-center justify-center ;
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 }
-/*  */
+
+.blob{
+  opacity: 0.5;
+  z-index: -10;
+  @apply mix-blend-hard-light blur-[256px] filter;
+}
+
+/*disable scrollbar  */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
