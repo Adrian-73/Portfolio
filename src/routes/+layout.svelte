@@ -40,7 +40,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </label>
       </div> 
-      <div class="flex-1 px-2 mx-2 text-2xl">Mandar Majumder</div>
+      <a href="/" class="flex-1 px-2 mx-2 text-2xl">Mandar Majumder</a>
       <nav class="flex-none hidden lg:block">
         <ul class="menu menu-horizontal text-xl">
           <!-- Navbar menu content here -->
@@ -81,7 +81,7 @@
 
 <footer class="footer p-10 bg-base-200 w-full text-base-content">
   <aside>
-    <img src="/favicon.svg" alt="">
+    <img src="/favicon.png" alt="">
     <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
   </aside> 
   <nav>

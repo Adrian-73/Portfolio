@@ -1,23 +1,8 @@
 {"social":[
     {
         "name": "facebook",
-        "url": "https://www.facebook.com/roberto.romero.399826",
-        "icon": "/facebook.svg"
-    },
-    {
-        "name": "twitter",
-        "url": "https://twitter.com/roberto_romero_",
-        "icon": "/Twitter.svg"
-    },
-    {
-        "name": "linkedin",
-        "url": "https://www.linkedin.com/in/roberto-romero-0b1b0b1a/",
-        "icon": "/LinkedIn.svg"
-    },
-    {
-        "name": "github",
-        "url": "https://www.github.com/robertoromero",
-        "icon": "/Github.svg"
+        "url": "https://www.facebook.com/roberto.romero.399826"
+        
     }
 ],
 "uri":[
@@ -28,13 +13,9 @@
     {
         "name":"Blog",
         "uri":"/blog"
-    },
-    {
-        "name":"Skills",
-        "uri":"/skills"
-    },
-    {
-        "name":"Contacts",
-        "uri":"/contacts"
     }
-]}
+],
+"Ai":["python","plotly","pandas","numpy","scikitlearn","keras","tensorflow","jupyter","linux"],
+"Web":["html","css","javascript","tailwind","svelte","nodejs","mongo","mysql","postgresql","supabase"],
+"Software":["c","java","go","python","bash","sqlite","mysql","postgresql","linux","git"]
+}

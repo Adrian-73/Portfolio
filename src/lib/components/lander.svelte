@@ -1,14 +1,12 @@
 <div
-  class="py-4 items-center flex flex-col lg:flex-row justify-around w-full  lg:pt-[80px]"
+  class="py-4 items-center flex flex-col lg:flex-row justify-around w-full lg:pt-[80px]"
 >
-
-
   <div
     class="relative max-w-[409px] h-full flex-col justify-start items-center gap-[27px] inline-flex place-self-center my-4"
   >
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <div
-      class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full blob  animate-blob"
+      class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full blob animate-blob"
     ></div>
     <div
       class="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full blob animate-blob animation-delay-2000"
@@ -22,18 +20,16 @@
       xmlns:xlink="http://www.w3.org/1999/xlink"
       width="100%"
       id="blobSvg"
-      class="w-full h-full "
+      class="w-full h-full"
     >
       <defs>
         <clipPath id="shape">
-          <path
-            id="blob"
-            fill="#000000"
-          ><animate
-          attributeName="d"
-          dur="8s"
-          repeatCount="indefinite"
-          values="M452,334Q418,418,334,444Q250,470,167,443Q84,416,76,333Q68,250,85.5,176.5Q103,103,176.5,105.5Q250,108,306,123Q362,138,424,194Q486,250,452,334Z; 
+          <path id="blob" fill="#000000"
+            ><animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="M452,334Q418,418,334,444Q250,470,167,443Q84,416,76,333Q68,250,85.5,176.5Q103,103,176.5,105.5Q250,108,306,123Q362,138,424,194Q486,250,452,334Z; 
           
           M457,337.5Q425,425,337.5,448Q250,471,167.5,443Q85,415,45.5,332.5Q6,250,74.5,196.5Q143,143,196.5,99Q250,55,315.5,87Q381,119,435,184.5Q489,250,457,337.5Z; 
 
@@ -45,8 +41,8 @@
           
           
           "
-        ></animate>
-        </path>
+            ></animate>
+          </path>
         </clipPath>
       </defs>
       <image
@@ -55,7 +51,7 @@
         width="100%"
         height="100%"
         clip-path="url(#shape)"
-        xlink:href="https://source.unsplash.com/5PVXkqt2s9k/500x500"
+        xlink:href="favicon.png"
         preserveAspectRatio="none"
       ></image>
     </svg>
@@ -69,22 +65,32 @@
         </div>
 
         <div class="w-full text-center text-base font-light">
-          Software Engineer | AI/ML Devoloper (TensorFplw/ PyTorch / Keras)
+          Software Engineer | AI/ML Devoloper (TensorFolw/ PyTorch / Keras)
         </div>
       </div>
     </div>
   </div>
   <div
-    class="lg:w-[720px] w-full min-h-[284px] h-full lg:px-2.5 flex-col justify-center items-center  inline-flex "
+    class="lg:w-[720px] w-full min-h-max h-full lg:px-2.5 flex-col justify-center items-center inline-flex"
   >
-  <div class="hero bg-white backdrop-blur-sm bg-opacity-10 h-[500px] w-full">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hello there</h1>
-        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <button class="btn btn-primary">Get Started</button>
+    <div class="hero bg-white glass bg-opacity-10 p-4 h-max w-full">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Hello there</h1>
+          <p class="py-5 text-justify text-lg">
+            My name is Mandar Majumder, and I am a young AI/ML developer
+            currently pursuing my degree in computer science. I have a strong
+            passion for machine learning and deep learning, and I have developed
+            a solid foundation in these areas through my studies and personal
+            projects. I am proficient in popular machine learning libraries such
+            as Scikit-learn, Keras, and TensorFlow, and I am always eager to
+            learn and explore new techniques and technologies in the field. I am
+            excited to contribute my skills and knowledge to real-world projects
+            and collaborate with others to create innovative AI solutions.
+          </p>
+          <a href="https://whjdhzrdaivxmsmifapd.supabase.co/storage/v1/object/public/images/Mandar%20Majumder's%20Resume-hackerresume.pdf" class="btn btn-primary">Resume</a>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </div>

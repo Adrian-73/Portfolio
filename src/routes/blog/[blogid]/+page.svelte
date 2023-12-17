@@ -11,8 +11,7 @@
         
 <div class="prose py-10 md:px-10 px-4 prose-invert prose-p:text-2xl
 prose-h1:text-center md:prose-h1:text-5xl
-border border-emerald-300 min-w-full min-h-full 
-bg-emerald-600 bg-opacity-20 ">
+border border-accent glass w-full max-w-5xl min-h-full ">
     <Markdown md={data.post.content}  />
 </div>
     </div>
